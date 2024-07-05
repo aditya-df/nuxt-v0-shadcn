@@ -4,7 +4,7 @@ WORKDIR /app/
 # RUN rm -rf /app/.output
 COPY package*.json ./
 COPY . .
-RUN npm install
+RUN npm install --fetch-timeout=60000
 RUN npm run generate
 
 
